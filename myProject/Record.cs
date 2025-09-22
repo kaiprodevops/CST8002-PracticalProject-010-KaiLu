@@ -8,7 +8,7 @@
 using System;
 
 /// <summary>
-/// Represents a single record (row) from the dataset.
+/// Represents a single record (row) from the dataset
 /// </summary>
 public class Record
 {
