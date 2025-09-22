@@ -85,6 +85,17 @@ public class Program
             return;
         }
 
-        
+        // Loop over the data structure and display the record data.
+        foreach (var record in records)
+        {
+            Console.WriteLine($"Site ID: {record.Site_identification}");
+            Console.WriteLine($"  Camera Set: {record.Camera_set_date_time}");
+            Console.WriteLine($"  Camera Check: {record.Camera_check_date_time}");
+            Console.WriteLine($"  Lure Type: {record.Lure_type}");
+            Console.WriteLine($"  Species: {record.Species_common_name}");
+            Console.WriteLine($"  Count: {record.Count_of_individuals}");
+            Console.WriteLine($"  Observation: {record.Observation_date_time}\n");
+        }
+
     }
 }
