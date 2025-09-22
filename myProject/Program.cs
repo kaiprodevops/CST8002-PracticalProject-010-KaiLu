@@ -74,6 +74,8 @@ public class Program
         {
             // Gracefully exit the program if the file is not found.
             Console.WriteLine("Error: The dataset file was not found.");
+            Console.WriteLine("Program by: Kai Lu");
+            Console.WriteLine("Press any key to exit.");
             Console.ReadKey();
             return;
         }
@@ -81,6 +83,8 @@ public class Program
         {
             // Catch any other unexpected errors during file reading or parsing.
             Console.WriteLine($"An unexpected error occurred: {ex.Message}");
+            Console.WriteLine("Program by: Kai Lu");
+            Console.WriteLine("Press any key to exit.");
             Console.ReadKey();
             return;
         }
