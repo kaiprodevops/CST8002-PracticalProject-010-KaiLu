@@ -97,5 +97,11 @@ public class Program
             Console.WriteLine($"  Observation: {record.Observation_date_time}\n");
         }
 
+        // Display my full name on screen.
+        Console.WriteLine("------------------------------------------");
+        Console.WriteLine("Program by: Kai Lu");
+        Console.WriteLine("Press any key to exit.");
+        Console.ReadKey();
+
     }
 }
