@@ -1,7 +1,14 @@
-﻿using System;
+﻿/// <summary>
+/// Course number: CST8002
+/// Course name: Programming Language Research Project
+/// Professor's name: Stanley Pieda
+/// Due date: 2025-09-21
+/// Author name: Kai Lu
+/// </summary>
+using System;
 
 /// <summary>
-/// Represents a single record (row) from the dataset.
+/// Represents a single record (row) from the dataset
 /// </summary>
 public class Record
 {
