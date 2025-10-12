@@ -11,11 +11,24 @@ using PracticalProject2.Presentation;
 
 namespace PracticalProject2
 {
+    /// <summary>
+    /// The main entry point class for the console application.
+    /// Responsible for initializing and wiring up the application layers.
+    /// </summary>
     class Program
     {
-        // Set the path to the data file.
+        /// <summary>
+        /// Defines the relative path to the dataset file.
+        /// The path is relative to the application's execution directory 
+        /// </summary>
         private const string DataFilePath = @"PracticalProject2/data/data.csv";
 
+        /// <summary>
+        /// The main entry point for the application.
+        /// This method initializes the business and presentation layers, triggers the initial data load,
+        /// and starts the main user interface loop.
+        /// </summary>
+        /// <param name="args">Command-line arguments passed to the application (not used).</param>
         static void Main(string[] args)
         {
             string fullPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, DataFilePath);

@@ -1,3 +1,10 @@
+/// <summary>
+/// Course number: CST8002
+/// Course name: Programming Language Research Project
+/// Professor's name: Stanley Pieda
+/// Due date: 2025-10-12
+/// Author name: Kai Lu
+/// </summary>
 using PracticalProject2.Model;
 using System.Globalization;
 
