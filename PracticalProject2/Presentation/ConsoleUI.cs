@@ -208,6 +208,7 @@ namespace PracticalProject2.Presentation
 
         /// <summary>
         /// Deletes a record selected by the user.
+        /// relate to ObservationManager.DeleteObservation()
         /// </summary>
         private void DeleteRecord()
         {

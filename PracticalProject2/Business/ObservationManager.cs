@@ -87,6 +87,7 @@ namespace PracticalProject2.Business
 
         /// <summary>
         /// Deletes an observation from the in-memory list at a specified index.
+        /// relate to Presentation.ConsoleUI.DeleteRecord()
         /// </summary>
         /// <param name="index">The zero-based index of the observation to delete.</param>
         /// <returns>True if deletion was successful, otherwise false.</returns>
