@@ -166,6 +166,7 @@ namespace PracticalProject2.Presentation
 
         /// <summary>
         /// Guides the user through editing an existing record.
+        /// relate to ObservationManager.UpdateObservation()
         /// </summary>
         private void EditRecord()
         {
