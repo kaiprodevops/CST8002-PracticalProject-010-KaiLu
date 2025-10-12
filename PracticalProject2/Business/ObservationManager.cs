@@ -100,7 +100,7 @@ namespace PracticalProject2.Business
         }
 
         /// <summary>
-        /// Persists the current in-memory data to a new file
+        /// Persists the current in-memory data to a new file. check DataAccess.SaveObservations for details.
         /// </summary>
         public void PersistData()
         {

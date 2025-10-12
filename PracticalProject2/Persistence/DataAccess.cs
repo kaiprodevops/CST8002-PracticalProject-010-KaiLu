@@ -66,11 +66,11 @@ namespace PracticalProject2.Persistence
         }
 
         /// <summary>
-        /// Persists the list of observations to a new CSV file.
-       /// The filename is a globally unique identifier (GUID).
-       /// </summary>
-       /// <param name="observations">The list of observations to save.</param>
-       /// <returns>The generated file path of the saved file.</returns>
+        /// Persist the data from memory to the disk as a comma-separated file, writing to a new file.
+        /// The filename is a globally unique identifier (GUID).
+        /// </summary>
+        /// <param name="observations">The list of observations to save.</param>
+        /// <returns>The generated file path of the saved file.</returns>
         public string SaveObservations(List<ForestMammalObservation> observations)
         {
             // Generate a unique filename using a GUID

@@ -51,6 +51,7 @@ namespace PracticalProject2.Presentation
                     case "6":
                         _manager.ReloadData();
                         break;
+                    // Persist the data from memory to the disk as a comma-separated file, writing to a new file.check ObservationManager.PersistData()
                     case "7":
                         _manager.PersistData();
                         break;
