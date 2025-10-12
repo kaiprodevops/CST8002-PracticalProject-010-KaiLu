@@ -42,6 +42,7 @@ namespace PracticalProject2.Business
 
         /// <summary>
         /// Reloads data from the source file, replacing the current in-memory data
+        /// To give the user a fresh restart without restarting the application
         /// </summary>
         public void ReloadData()
         {

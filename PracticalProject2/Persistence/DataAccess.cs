@@ -35,12 +35,12 @@ namespace PracticalProject2.Persistence
                         var observation = new ForestMammalObservation
                         {
                             SiteId = int.Parse(columns[0]),
-                            CameraSetDateTime = DateTime.Parse(columns[1], CultureInfo.InvariantCulture),
-                            CameraCheckDateTime = DateTime.Parse(columns[2], CultureInfo.InvariantCulture),
+                            CameraSetDateTime = DateTime.ParseExact(columns[1], "d/M/yyyy H:mm", CultureInfo.InvariantCulture),
+                            CameraCheckDateTime = DateTime.ParseExact(columns[2], "d/M/yyyy H:mm", CultureInfo.InvariantCulture),
                             LureType = columns[3],
                             SpeciesCommonName = columns[4],
                             IndividualCount = int.Parse(columns[5]),
-                            ObservationDateTime = DateTime.Parse(columns[6], CultureInfo.InvariantCulture)
+                            ObservationDateTime = DateTime.ParseExact(columns[6], "d/M/yyyy H:mm", CultureInfo.InvariantCulture)
                         };
                         observations.Add(observation);
                     }
