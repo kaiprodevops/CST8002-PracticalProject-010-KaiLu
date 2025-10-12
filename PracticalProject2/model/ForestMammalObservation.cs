@@ -24,7 +24,9 @@
                    $"Species: {SpeciesCommonName}, " +
                    $"Count: {IndividualCount}, " +
                    $"Observation Time: {ObservationDateTime:yyyy-MM-dd HH:mm}, " +
-                   $"Lure: {LureType}";
+                   $"Lure type: {LureType}, " +
+                   $"Camera Set: { CameraSetDateTime: yyyy - MM - dd HH: mm}, " +
+                   $"Camera Check: { CameraCheckDateTime: yyyy - MM - dd HH: mm}\n";
         }
     }
 }

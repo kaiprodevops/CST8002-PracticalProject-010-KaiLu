@@ -112,10 +112,11 @@ namespace PracticalProject2.Presentation
 
         /// <summary>
         /// Handles displaying a single record selected by the user
+        /// use the index to access the list
         /// </summary>
         private void DisplaySingleRecord()
         {
-            Console.Write("Enter the record number to display: ");
+            Console.Write("Enter the record number(using list index) to display: ");
             if (int.TryParse(Console.ReadLine(), out int index) && index > 0 && index <= _manager.GetAllObservations().Count)
             {
                 Console.WriteLine(_manager.GetAllObservations()[index - 1]);
