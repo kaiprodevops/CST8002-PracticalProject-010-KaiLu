@@ -60,7 +60,8 @@ namespace PracticalProject2.Business
         }
 
         /// <summary>
-        /// Adds a new observation to the in-memory list.
+        /// Adds a new observation to the ***in-memory*** list. 
+        /// For create a new record functionality
         /// </summary>
         /// <param name="observation">The new observation to add.</param>
         public void AddObservation(ForestMammalObservation observation)

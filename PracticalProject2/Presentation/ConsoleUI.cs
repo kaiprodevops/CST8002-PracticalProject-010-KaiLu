@@ -129,6 +129,7 @@ namespace PracticalProject2.Presentation
 
         /// <summary>
         /// Guides the user through creating a new observation record.
+        /// check ObservationManager.AddObservation()
         /// </summary>
         private void CreateNewRecord()
         {
