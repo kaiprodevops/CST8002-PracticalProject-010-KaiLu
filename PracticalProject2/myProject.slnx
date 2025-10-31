@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="../PracticalProject2.NUnitTests/PracticalProject2.NUnitTests.csproj" Id="98803aa2-b7f6-4138-be23-127a4cfb1a7d" />
+  <Project Path="myProject.csproj" />
+</Solution>
