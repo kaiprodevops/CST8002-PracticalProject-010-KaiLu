@@ -35,7 +35,7 @@ namespace PracticalProject2
 
             ObservationManager manager = new ObservationManager(fullPath);
             manager.LoadInitialData(); // Load data on startup [cite: 11]
-            Console.WriteLine("\n--- Data loading complete. Press any key to see the menu... ---"); // 添加一句提示
+            Console.WriteLine("\n--- Data loading complete. Press any key to see the menu... ---"); 
             Console.ReadKey(); 
             ConsoleUI ui = new ConsoleUI(manager);
             ui.Run();
