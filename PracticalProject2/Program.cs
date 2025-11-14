@@ -1,6 +1,6 @@
 ﻿/// <summary>
 /// Course number: CST8002
-/// Course name: Programming Language Research Project
+/// Course name: Programming Language Research Project.
 /// Professor's name: Stanley Pieda
 /// Due date: 2025-11-16
 /// Author name: Kai Lu
