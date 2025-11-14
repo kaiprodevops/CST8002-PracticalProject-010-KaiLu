@@ -2,7 +2,7 @@
 /// Course number: CST8002
 /// Course name: Programming Language Research Project
 /// Professor's name: Stanley Pieda
-/// Due date: 2025-10-12
+/// Due date: 2025-11-16
 /// Author name: Kai Lu
 /// </summary>
 using PracticalProject2.Model;
@@ -16,6 +16,8 @@ namespace PracticalProject2.Business
     /// </summary>
     public class ObservationManager
     {
+        // Project 3 Requirement: Use a List, Set, or Tree rather than a simple array.
+        // I use List<T> here to hold the observations in memory.
         private List<ForestMammalObservation> _observations;
         private readonly DataAccess _dataAccess;
         private readonly string _filePath;
@@ -122,6 +124,17 @@ namespace PracticalProject2.Business
             {
                 Console.WriteLine("Failed to persist data.");
             }
+        }
+        /// <summary>
+        /// Project 3 Requirement: Sort the records in the data structure based on a single column.
+        /// Sorts the in-memory observations alphabetically by Species Common Name.
+        /// Uses the LINQ OrderBy algorithm.
+        /// </summary>
+        public void SortBySpecies()
+        {
+            // LINQ Sort: Creates a sorted copy and reassigns it to the list
+            _observations = _observations.OrderBy(o => o.SpeciesCommonName).ToList();
+            Console.WriteLine("Records sorted by Species Common Name.");
         }
     }
 }

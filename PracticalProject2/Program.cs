@@ -1,8 +1,8 @@
 ﻿/// <summary>
 /// Course number: CST8002
-/// Course name: Programming Language Research Project
+/// Course name: Programming Language Research Project.
 /// Professor's name: Stanley Pieda
-/// Due date: 2025-10-12
+/// Due date: 2025-11-16
 /// Author name: Kai Lu
 /// </summary>
 
@@ -35,7 +35,7 @@ namespace PracticalProject2
 
             ObservationManager manager = new ObservationManager(fullPath);
             manager.LoadInitialData(); // Load data on startup [cite: 11]
-            Console.WriteLine("\n--- Data loading complete. Press any key to see the menu... ---"); // 添加一句提示
+            Console.WriteLine("\n--- Data loading complete. Press any key to see the menu... ---"); 
             Console.ReadKey(); 
             ConsoleUI ui = new ConsoleUI(manager);
             ui.Run();

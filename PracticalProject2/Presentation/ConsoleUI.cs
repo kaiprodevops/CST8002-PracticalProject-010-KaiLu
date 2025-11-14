@@ -2,7 +2,7 @@
 /// Course number: CST8002
 /// Course name: Programming Language Research Project
 /// Professor's name: Stanley Pieda
-/// Due date: 2025-10-12
+/// Due date: 2025-11-16
 /// Author name: Kai Lu
 /// </summary>
 /// 
@@ -64,7 +64,11 @@ namespace PracticalProject2.Presentation
                     case "7":
                         _manager.PersistData();
                         break;
-                    case "8":
+                    
+                    case "8": // Project 3 Requirement: Option to use functionality
+                        SortRecords();
+                        break;
+                    case "9":
                         exit = true;
                         break;
                     default:
@@ -92,7 +96,8 @@ namespace PracticalProject2.Presentation
             Console.WriteLine("5. Delete a Record");
             Console.WriteLine("6. Reload All Data from File");
             Console.WriteLine("7. Save All Data to New File");
-            Console.WriteLine("8. Exit");
+            Console.WriteLine("8. Sort Records by Species (Project 3)");
+            Console.WriteLine("9. Exit");
             Console.WriteLine("-------------------------------------------------");
         }
 
@@ -117,6 +122,16 @@ namespace PracticalProject2.Presentation
                     Console.WriteLine("--- Page Break --- Program by Kai Lu ---");
                 }
             }
+        }
+
+        /// <summary>
+        /// Project 3: Handles sorting functionality.
+        /// </summary>
+        private void SortRecords()
+        {
+            // Here I default to Species per requirements for "single column".
+            Console.WriteLine("Sorting records by Species Common Name...");
+            _manager.SortBySpecies();
         }
 
         /// <summary>
