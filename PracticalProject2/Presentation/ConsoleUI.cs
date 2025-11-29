@@ -9,6 +9,7 @@
 
 using PracticalProject2.Business;
 using PracticalProject2.Model;
+using Spectre.Console;
 
 namespace PracticalProject2.Presentation
 {
@@ -68,7 +69,10 @@ namespace PracticalProject2.Presentation
                     case "8": // Project 3 Requirement: Option to use functionality
                         SortRecords();
                         break;
-                    case "9":
+                    case "9": // Project 4 Requirement: New Feature
+                        VisualizeData();
+                        break;
+                    case "0":
                         exit = true;
                         break;
                     default:
@@ -86,6 +90,10 @@ namespace PracticalProject2.Presentation
         private void DisplayMenu()
         {
             Console.Clear();
+            // Using Spectre.Console for a nicer header
+            AnsiConsole.Write(
+                new Rule("[yellow]Forest Mammal Observation Program[/]")
+                .RuleStyle("grey"));
             Console.WriteLine("=================================================");
             Console.WriteLine(" Forest Mammal Observation Program by Kai Lu ");
             Console.WriteLine("=================================================");
@@ -97,9 +105,61 @@ namespace PracticalProject2.Presentation
             Console.WriteLine("6. Reload All Data from File");
             Console.WriteLine("7. Save All Data to New File");
             Console.WriteLine("8. Sort Records by Species (Project 3)");
-            Console.WriteLine("9. Exit");
+            AnsiConsole.MarkupLine("[bold cyan]9. Visualize Data (Project 4)[/]"); // Highlight new feature
+            Console.WriteLine("0. Exit");
             Console.WriteLine("-------------------------------------------------");
         }
+
+        /// <summary>
+        /// Project 4 Feature: Interactive Data Visualization.
+        /// Allows the user to filter data at runtime and views it as a Horizontal Bar Chart.
+        /// </summary>
+        private void VisualizeData()
+        {
+            Console.Clear();
+            AnsiConsole.Write(new Rule("[cyan]Visualize Species Data[/]"));
+
+            // 1. User Interaction (Run-time customization)
+            // Use simple Console.ReadLine here to keep interaction consistent
+            Console.WriteLine("You can filter the chart by year.");
+            Console.Write("Enter a year (e.g. 2014) or press Enter to visualize ALL years: ");
+            string? input = Console.ReadLine();
+
+            int? selectedYear = null;
+            if (int.TryParse(input, out int parsedYear))
+            {
+                selectedYear = parsedYear;
+            }
+
+            // 2. Data Retrieval (Business Layer)
+            var data = _manager.GetSpeciesObservationCounts(selectedYear);
+
+            if (data.Count == 0)
+            {
+                AnsiConsole.MarkupLine("[red]No observations found for the selected criteria.[/]");
+                return;
+            }
+
+            // 3. Visualization (Presentation Layer - Spectre.Console)
+            // Modern Best Practice: Use a specific rendering object for clean code
+            var chart = new BarChart()
+                .Width(60)
+                .Label($"[green bold underline]Species Observations ({(selectedYear.HasValue ? selectedYear.ToString() : "All Time")})[/]")
+                .CenterLabel();
+
+            // Add data to chart
+            foreach (var item in data)
+            {
+                // We can dynamically assign colors or use a static one
+                chart.AddItem(item.Key, item.Value, Color.Yellow);
+            }
+
+            // Render
+            AnsiConsole.WriteLine();
+            AnsiConsole.Write(chart);
+            AnsiConsole.WriteLine();
+        }
+
 
         /// <summary>
         /// Handles the logic to display all records, with pagination
