@@ -2,7 +2,7 @@
 /// Course number: CST8002
 /// Course name: Programming Language Research Project
 /// Professor's name: Stanley Pieda
-/// Due date: 2025-11-16
+/// Due date: 2025-11-30
 /// Author name: Kai Lu
 /// </summary>
 using PracticalProject2.Model;
@@ -135,6 +135,29 @@ namespace PracticalProject2.Business
             // LINQ Sort: Creates a sorted copy and reassigns it to the list
             _observations = _observations.OrderBy(o => o.SpeciesCommonName).ToList();
             Console.WriteLine("Records sorted by Species Common Name.");
+        }
+
+        /// <summary>
+        /// Project 4 Feature: Aggregates species counts, optionally filtered by year.
+        /// Use LINQ for concise data manipulation.
+        /// </summary>
+        /// <param name="year">The year to filter by, or null to include all years.</param>
+        /// <returns>A dictionary of Species Names and their observation counts.</returns>
+        public Dictionary<string, int> GetSpeciesObservationCounts(int? year)
+        {
+            IEnumerable<ForestMammalObservation> query = _observations;
+
+            // Apply filter if a year is provided (Run-time interaction logic)
+            if (year.HasValue)
+            {
+                query = query.Where(o => o.ObservationDateTime.Year == year.Value);
+            }
+
+            // Group and Sum
+            return query
+                .Where(o => !string.IsNullOrWhiteSpace(o.SpeciesCommonName))
+                .GroupBy(o => o.SpeciesCommonName!)
+                .ToDictionary(g => g.Key, g => g.Sum(o => o.IndividualCount));
         }
     }
 }
